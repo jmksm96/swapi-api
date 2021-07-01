@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/header/header";
+import ItemList from "./components/item-list/item-list";
+import PersonDetails from "./components/person-details/person-details";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = () => {
+
+
+    // useEffect(() => {
+    //     api.getAllPeople().then((res) => {
+    //         const resp = res.data
+    //     })
+    //     api.getPeople(3).then((res) => {
+    //         console.log(res.data.name)
+    //     })
+    // }, [])
+
+
+    return (
+        <div>
+            <Header/>
+            <ItemList/>
+            <PersonDetails/>
+        </div>
+    );
+};
 
 export default App;
