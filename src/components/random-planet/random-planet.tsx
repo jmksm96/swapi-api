@@ -49,13 +49,16 @@ const RandomPlanet = () => {
     }
 
     return (
-        <div className={styles.container}>
-            <img src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt=""/>
-            <div className={styles.description}>
-                <h4>{state.name}</h4>
-                <div> Population: {state.population}</div>
-                <div>Rotation Period: {state.rotationPeriod}</div>
-                <div>Diameter: {state.diameter}</div>
+        <div className={styles.mainBlock}>
+                <div className={styles.container}>
+                    <img src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt=""/>
+                    <div className={styles.desc}>
+                        <h4>{state.name}</h4>
+                        <div> Population: {state.population}</div>
+                        <div>Rotation Period: {state.rotationPeriod}</div>
+                        <div>Diameter: {state.diameter}</div>
+                    </div>
+
             </div>
         </div>
     );

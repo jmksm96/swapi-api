@@ -17,7 +17,10 @@ const ItemList = () => {
 
         return (
             <div>
-                {peopleList.map(p => <div>{p.name}</div>)}
+                {peopleList.map(p =>
+                    <div onClick={() => {alert(p.name)}}>
+                        {p.name}
+                    </div>)}
             </div>
         );
 

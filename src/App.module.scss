@@ -1,0 +1,30 @@
+@import 'common/styles/mixin';
+
+.container {
+  @include container();
+  @include flex(row, space-between, center, wrap);
+
+  .characters {
+    width: 200px;
+    height: 200px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+  }
+
+  .planets {
+    width: 200px;
+    height: 200px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+  }
+
+  .starships {
+    width: 200px;
+    height: 200px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+  }
+}

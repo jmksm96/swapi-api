@@ -44,4 +44,5 @@ export type ResponsePeopleType = {
     gender: string
     hair_color: string
     mass: string
+
 }
