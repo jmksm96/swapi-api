@@ -7,10 +7,10 @@ const settings = {
 }
 const instance = axios.create(settings)
 
- const api = {
+const api = {
 
     getAllPeople: () => {
-        return instance.get(`people/`)
+        return instance.get<PeopleType>(`people/`)
     },
     getPeople: (id: number) => {
         return instance.get(`people/${id}/`)
@@ -32,3 +32,16 @@ const instance = axios.create(settings)
 }
 
 export default api
+
+export type PeopleType = {
+    results: Array<ResponsePeopleType>
+}
+
+export type ResponsePeopleType = {
+    name: string
+    height: string
+    birth_year: string
+    gender: string
+    hair_color: string
+    mass: string
+}
