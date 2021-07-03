@@ -4,16 +4,18 @@ import style from './character.module.scss'
 import PersonDetails from "../../person-details/person-details";
 
 
-type PropsType = {
-    p: any
+export type CharacterPropsType = {
     name: string
     gender: string
     birthYear: string
     height: string
     hairColor: string
+    id: number
 }
 
-const Character: React.FC<PropsType> = (props) => {
+
+const Character: React.FC<CharacterPropsType> = (props) => {
+    const {name, gender, birthYear, height, hairColor, id} = props
     return (
         <div className={style.character}>
             <BrowserRouter>
@@ -23,11 +25,12 @@ const Character: React.FC<PropsType> = (props) => {
                     </Link>
                 </>}/>
 
-                <Route path='/character' render={() => <PersonDetails name={props.name}
-                                                                            birthYear={props.birthYear}
-                                                                            gender={props.gender}
-                                                                            hairColor={props.hairColor}
-                                                                            height={props.height}/>}/>
+                <Route path='/character/' render={() => <PersonDetails name={name}
+                                                                      birthYear={birthYear}
+                                                                      gender={gender}
+                                                                      hairColor={hairColor}
+                                                                      height={height}
+                                                                      id={id}/>}/>
             </BrowserRouter>
         </div>
     );

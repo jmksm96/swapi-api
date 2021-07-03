@@ -58,6 +58,7 @@ export type ResponsePeopleType = {
     hair_color: string
     mass: string
     url: string
+    id: number
 }
 
 export type ImageType = {

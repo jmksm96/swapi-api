@@ -1,35 +1,39 @@
 import React, {useEffect, useState} from 'react';
 import style from './person-details.module.scss'
-import api, {ImageType} from "../../api/api";
-
-type PropsType = {
-    name: string
-    gender: string
-    birthYear: string
-    height: string
-    hairColor: string
-}
+import api from "../../api/api";
+import logo from './../../common/assets/logo.jpg'
+import {CharacterPropsType} from "../charachters/character/character";
 
 
-const PersonDetails: React.FC<PropsType> = (props) => {
+
+const PersonDetails: React.FC<CharacterPropsType> = (props) => {
 const [img, setImg] = useState<any>()
 
-
   useEffect(() => {
-      api.getPersonImg(1).then((res) => {
+      api.getPersonImg(id).then((res) => {
           setImg(res.data)
       })
   },[])
 
-    const {name, gender, birthYear, hairColor, height} = props
+    const {name, gender, birthYear, hairColor, height, id} = props
 
     return (
         <div className={style.container}>
-            <h4>{name}</h4>
-            <div> Gender: {gender}</div>
-            <div>Birth Year: {birthYear}</div>
-            <div>Hair Color: {hairColor}</div>
-            <div>Height: {height}</div>
+            <div className={style.img}>
+                {/*<img src={logo} alt=""/>*/}
+                <img src={img} alt=""/>
+            </div>
+
+            <div className={style.details}>
+                <h4>{name}</h4>
+                <ul>
+                    <li>Gender: {gender}</li>
+                    <li>Birth Year: {birthYear}</li>
+                    <li>Hair Color: {hairColor}</li>
+                    <li>Height: {height}</li>
+                </ul>
+            </div>
+
         </div>
     );
 };
