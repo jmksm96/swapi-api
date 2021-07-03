@@ -1,7 +1,12 @@
+@import 'src/common/styles/mixin';
+
 .character {
-  display: flex;
-  justify-content: center;
-  align-content: flex-end;
+  @include flex(row-reverse, center, center, nowrap);
+  //display: flex;
+  //justify-content: center;
+  //align-content: flex-end;
   border: 1px solid white;
   margin-top: 10px;
+  height: 250px;
+  width: 250px;
 }

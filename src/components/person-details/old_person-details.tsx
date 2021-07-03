@@ -20,7 +20,7 @@ const Old_personDetails = () => {
 
     useEffect(() => {
         const id = 1
-        api.getPeople(id).then((res) => {
+        api.getPerson(id).then((res) => {
             setState({
                 name: res.data.name,
                 birthYear: res.data.birth_year,

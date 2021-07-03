@@ -3,16 +3,21 @@ import axios from "axios";
 
 const settings = {
     baseURL: 'https://swapi.dev/api/'
-
 }
+
+const settingsImg = {
+    baseURL: 'https://starwars-visualguide.com/assets/img/'
+}
+
 const instance = axios.create(settings)
+const instanceImg = axios.create(settingsImg)
 
 const api = {
 
-    getAllPeople: () => {
+    getAllPerson: () => {
         return instance.get<PeopleType>(`people/`)
     },
-    getPeople: (id: number) => {
+    getPerson: (id: number) => {
         return instance.get(`people/${id}/`)
     },
     getAllPlanets: () => {
@@ -27,11 +32,19 @@ const api = {
     getStarship: (id: number) => {
         return instance.get(`starships/${id}/`)
     },
-
-
+    getPersonImg:(id: number) => {
+        return instanceImg.get<ImageType>(`characters/${id}.jpg`)
+    },
+    getPlanetImg: (id: number) => {
+        return instanceImg.get(`planets/${id}.jpg`)
+    },
+    getStarshipsImg: (id: number) => {
+        return instanceImg.get(`starships/${id}.jpg`)
+    },
 }
 
 export default api
+
 
 export type PeopleType = {
     results: Array<ResponsePeopleType>
@@ -44,5 +57,9 @@ export type ResponsePeopleType = {
     gender: string
     hair_color: string
     mass: string
+    url: string
+}
 
+export type ImageType = {
+    image: File
 }

@@ -10,7 +10,7 @@ const ItemList = () => {
 
 
     useEffect(() => {
-        api.getAllPeople().then((res) => {
+        api.getAllPerson().then((res) => {
             setPeopleList(res.data.results)
         })
     }, [])
