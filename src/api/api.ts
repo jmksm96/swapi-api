@@ -5,12 +5,8 @@ const settings = {
     baseURL: 'https://swapi.dev/api/'
 }
 
-const settingsImg = {
-    baseURL: 'https://starwars-visualguide.com/assets/img/'
-}
-
 const instance = axios.create(settings)
-const instanceImg = axios.create(settingsImg)
+
 
 const api = {
 
@@ -31,16 +27,7 @@ const api = {
     },
     getStarship: (id: number) => {
         return instance.get(`starships/${id}/`)
-    },
-    getPersonImg:(id: number) => {
-        return instanceImg.get<ImageType>(`characters/${id}.jpg`)
-    },
-    getPlanetImg: (id: number) => {
-        return instanceImg.get(`planets/${id}.jpg`)
-    },
-    getStarshipsImg: (id: number) => {
-        return instanceImg.get(`starships/${id}.jpg`)
-    },
+    }
 }
 
 export default api

@@ -19,33 +19,25 @@ const Character: React.FC<CharacterPropsType> = (props) => {
     return (
         <div className={style.character}>
             <BrowserRouter>
-                <Route exact path='/characters' render={() => <>
-                    <Link to='/character'>
-                        {props.name}
-                    </Link>
-                </>}/>
+                <Switch>
+                    <Route exact path='/characters/' render={() => <div className={style.link}>
+                        <Link to={'/character/' + id}>
+                            {name}
+                            <img src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} alt=""/>
+                        </Link>
+                    </div>}/>
 
-                <Route path='/character/' render={() => <PersonDetails name={name}
-                                                                      birthYear={birthYear}
-                                                                      gender={gender}
-                                                                      hairColor={hairColor}
-                                                                      height={height}
-                                                                      id={id}/>}/>
+                    <Route path={'/character/' + id} render={() => <PersonDetails name={name}
+                                                                                  key={id}
+                                                                                  birthYear={birthYear}
+                                                                                  gender={gender}
+                                                                                  hairColor={hairColor}
+                                                                                  height={height}
+                                                                                  id={id}/>}/>
+                </Switch>
             </BrowserRouter>
         </div>
     );
 };
 
 export default Character;
-
-
-// <BrowserRouter>
-//     <Link to='/person_details/'>
-//         {props.name}
-//     </Link>
-//     <Route path='/person_details/' render={() => <PersonDetails name={props.name}
-//                                                                 birthYear={props.birthYear}
-//                                                                 gender={props.gender}
-//                                                                 hairColor={props.hairColor}
-//                                                                 height={props.height}/>}/>
-// </BrowserRouter>

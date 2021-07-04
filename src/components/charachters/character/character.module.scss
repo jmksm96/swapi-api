@@ -1,12 +1,27 @@
 @import 'src/common/styles/mixin';
 
 .character {
-  @include flex(row-reverse, center, center, nowrap);
-  //display: flex;
-  //justify-content: center;
-  //align-content: flex-end;
-  border: 1px solid white;
-  margin-top: 10px;
-  height: 250px;
-  width: 250px;
+  @include container();
+  @include flex(row, space-between, center, nowrap);
+  //@include flex(column, space-between, center, nowrap);
+  //  //display: flex;
+  //  //justify-content: center;
+  //  //align-content: flex-end;
+  //  border: 1px solid white;
+  //  height: 250px;
+  //  width: 250px;
+  .link {
+
+    a {
+      @include flex(column, space-between, center, nowrap);
+    }
+
+    img {
+      display: flex;
+      border-radius: 30px;
+      width: 250px;
+      height: 350px;
+    }
+  }
 }
+
