@@ -1,30 +1,37 @@
 @import 'common/styles/mixin';
+@import url(https://allfont.ru/allfont.css?fonts=star-jedi);
 
-.container {
-  @include container();
-  @include flex(row, space-between, center, wrap);
+.mainBlock {
+  @include flex(row, center, center, wrap);
+  margin-top: 30px;
 
-  .characters {
-    width: 200px;
-    height: 200px;
-    border: 1px solid white;
-    display: flex;
-    justify-content: center;
+
+  .container {
+    @include flex(row, center, center, wrap);
+
+
+    .items {
+      @include container();
+      @include flex(row, space-between, center, wrap);
+
+
+      a {
+        font-family: 'Star Jedi', serif;
+        color: white;
+        font-size: 30px;
+        text-decoration: none;
+        @include flex(row, center, flex-start, wrap);
+        width: 400px;
+        height: 200px;
+        margin-top: 50px;
+
+        img {
+          width: 400px;
+          height: 200px;
+        }
+      }
+    }
   }
 
-  .planets {
-    width: 200px;
-    height: 200px;
-    border: 1px solid white;
-    display: flex;
-    justify-content: center;
-  }
 
-  .starships {
-    width: 200px;
-    height: 200px;
-    border: 1px solid white;
-    display: flex;
-    justify-content: center;
-  }
 }

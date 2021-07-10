@@ -1,61 +1,36 @@
-import React, {useEffect, useState} from 'react';
-import api, {ResponsePeopleType} from "../../api/api";
-import Character from "./character/character";
+import React, {useEffect} from 'react';
+import Character from './character/character';
 import style from './characters.module.scss'
-import {Link} from "react-router-dom";
+import {Link} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
 
-const getIdFromUrl = (url?: string): number => {
-    if (!url) return -1;
-    let arr = url.split('/');
-    let id = arr[arr.length - 2];
-    return (+id);
-}
-
-type DataType = {
-    name: string
-    height: string
-    birth_year: string
-    gender: string
-    hair_color: string
-    mass: string
-    url: string
-    id: number
-}
 
 const Characters = () => {
 
-    const [state, setState] = useState<Array<ResponsePeopleType>>([])
-    // const [data, setData] = useState<DataType>({
-    //     name: '',
-    //     birth_year: '',
-    //     url: '',
-    //     gender: '',
-    //     height: '',
-    //     mass: '',
-    //     hair_color: '',
-    //     id: NaN
-    // })
-
+    const dispatch = useDispatch()
+    const {characters} = useSelector(charactersSelector)
     useEffect(() => {
-        api.getAllPerson().then((res) => {
-                setState(res.data.results.map(r => ({...r, id: getIdFromUrl(r.url)})))
-            },
-        )
+        dispatch(getCharactersTC())
     }, [])
 
 
+
     return (
-        <div>
+        <div className={style.mainBlock}>
             <div className={style.container}>
-                <Link to='/'>Main</Link>
-                {state.map((p) =>
-                    (<Character name={p.name}
-                                gender={p.gender}
-                                birthYear={p.birth_year}
-                                height={p.height}
-                                hairColor={p.hair_color}
-                                id={p.id}/>)
+                <Link to="/">Main</Link>
+                {characters.map((c) =>
+                    <div className={style.item}>
+                        <Character name={c.name}
+                                   gender={c.gender}
+                                   birthYear={c.birth_year}
+                                   height={c.height}
+                                   hairColor={c.hair_color}
+                                   id={c.id}
+                        />
+                    </div>
                 )}
+
 
             </div>
         </div>
@@ -66,4 +41,16 @@ const Characters = () => {
 export default Characters;
 
 
-
+//
+// <div className={style.container}>
+//     <Link to='/'>Main</Link>
+//     {state.map((p) =>
+//         (<Character name={p.name}
+//                     gender={p.gender}
+//                     birthYear={p.birth_year}
+//                     height={p.height}
+//                     hairColor={p.hair_color}
+//                     id={p.id}/>)
+//     )}
+//
+// </div>
