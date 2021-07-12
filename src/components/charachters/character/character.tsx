@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
 import style from './character.module.scss'
-import PersonDetails from "../../person-details/person-details";
+import PersonDetails from '../../person-details/person-details';
 
 
 export type CharacterPropsType = {
@@ -20,7 +20,7 @@ const Character: React.FC<CharacterPropsType> = (props) => {
         <div className={style.character}>
             <BrowserRouter>
                 <Switch>
-                    <Route exact path='/characters/' render={() => <div className={style.link}>
+                    <Route exact path="/characters/" render={() => <div className={style.link}>
                         <Link to={'/character/' + id}>
                             {name}
                             <img src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} alt=""/>
@@ -41,3 +41,4 @@ const Character: React.FC<CharacterPropsType> = (props) => {
 };
 
 export default Character;
+

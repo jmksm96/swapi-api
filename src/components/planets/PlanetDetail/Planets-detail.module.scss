@@ -1,0 +1,20 @@
+@import 'src/common/styles/mixin';
+
+.planets {
+  @include container();
+  @include flex(row, space-between, center, nowrap);
+
+  .link {
+
+    a {
+      @include flex(column, space-between, center, nowrap);
+    }
+
+    img {
+      display: flex;
+      border-radius: 30px;
+      width: 250px;
+      height: 350px;
+    }
+  }
+}

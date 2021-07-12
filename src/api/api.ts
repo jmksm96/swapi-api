@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 
 const settings = {
@@ -11,13 +11,13 @@ const instance = axios.create(settings)
 const api = {
 
     getAllPerson: () => {
-        return instance.get<PeopleType>(`people/`)
+        return instance.get<PeopleT>(`people/`)
     },
     getPerson: (id: number) => {
         return instance.get(`people/${id}/`)
     },
     getAllPlanets: () => {
-        return instance.get(`planets/`)
+        return instance.get<PlanetsT>(`planets/`)
     },
     getPlanet: (id: number) => {
         return instance.get(`planets/${id}/`)
@@ -33,11 +33,11 @@ const api = {
 export default api
 
 
-export type PeopleType = {
-    results: Array<ResponsePeopleType>
+export type PeopleT = {
+    results: Array<ResponsePeopleT>
 }
 
-export type ResponsePeopleType = {
+export type ResponsePeopleT = {
     name: string
     height: string
     birth_year: string
@@ -48,6 +48,22 @@ export type ResponsePeopleType = {
     id: number
 }
 
-export type ImageType = {
-    image: File
+export type PlanetsT = {
+    results: Array<PlanetsResponseT>
+}
+
+export type PlanetsResponseT = {
+    name: string
+    rotation_period: string
+    orbital_period: string
+    diameter: string
+    climate: string
+    gravity: string
+    terrain: string
+    surface_water: string
+    population: string
+    residents: Array<string>
+    films: Array<string>
+    url: string
+    id: number
 }

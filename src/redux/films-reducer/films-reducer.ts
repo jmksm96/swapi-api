@@ -1,5 +1,5 @@
 import {Dispatch} from 'redux';
-import api, {ResponsePeopleType} from '../../api/api';
+import api, {ResponsePeopleT} from '../../api/api';
 import {getIdFromUrl} from '../../helpers/getID';
 
 
@@ -7,7 +7,7 @@ const initialState: initialStateT = {
     characters: []
 }
 
-export const characterReducer = (state = initialState, action: CharactersActionsT) => {
+export const filmsReducer = (state = initialState, action: CharactersActionsT) => {
     switch (action.type) {
         case 'SET-CHARACTERS': {
             return {
@@ -24,17 +24,17 @@ export const characterReducer = (state = initialState, action: CharactersActions
 //typing
 
 type initialStateT = {
-    characters: Array<ResponsePeopleType>
+    characters: Array<ResponsePeopleT>
 }
 
 export type CharactersActionsT = {
     type: 'SET-CHARACTERS'
-    characters: Array<ResponsePeopleType>
+    characters: Array<ResponsePeopleT>
 }
 
 //actions
 
-const setCharactersAC = (characters: Array<ResponsePeopleType>) => {
+const setCharactersAC = (characters: Array<ResponsePeopleT>) => {
     return {
         type: 'SET-CHARACTERS',
         characters: characters

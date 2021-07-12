@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import api, {ResponsePeopleType} from "../../api/api";
+import api, {ResponsePeopleT} from "../../api/api";
 
 
 const ItemList = () => {
 
 
-    const [peopleList, setPeopleList] = useState<Array<ResponsePeopleType>>([])
+    const [peopleList, setPeopleList] = useState<Array<ResponsePeopleT>>([])
 
 
 

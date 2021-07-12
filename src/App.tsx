@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import style from './App.module.scss';
-import Characters from './components/charachters/characters';
+import Planets from './components/planets/Planets';
+import Characters from './components/charachters/Characters';
 
 
 const App = () => {
@@ -38,7 +39,7 @@ const App = () => {
 
                     </div>}/>
                     <Route path={['/characters', '/character']} render={() => <Characters/>}/>
-                    {/*<Route path='/planets' render={() => <Planets/>}/>*/}
+                    <Route path='/planets' render={() => <Planets/>}/>
                     {/*<Route path='/starships' render={() => <Starships/>}/>*/}
 
                 </Switch>
