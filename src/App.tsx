@@ -1,5 +1,4 @@
 import React from 'react';
-import Particles from 'react-particles-js';
 import {Link, Route, Switch} from 'react-router-dom';
 import style from './App.module.scss';
 import Characters from './components/charachters/characters';

@@ -3,12 +3,14 @@ import Character from './character/character';
 import style from './characters.module.scss'
 import {Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
+import {getCharactersTC} from '../../redux/characters-reducer/character-reducer';
+import {charactersSelector} from '../../redux/characters-reducer/character-selector';
 
 
 const Characters = () => {
 
     const dispatch = useDispatch()
-    const {characters} = useSelector(charactersSelector)
+    const characters = useSelector(charactersSelector)
     useEffect(() => {
         dispatch(getCharactersTC())
     }, [])
