@@ -1,6 +1,7 @@
 import {Dispatch} from 'redux';
-import api, {ResponsePeopleT} from '../../api/api';
+import api from '../../api/api';
 import {getIdFromUrl} from '../../helpers/getID';
+import {ResponseCharactersType} from '../../api/api-typing';
 
 
 const initialState: initialStateT = {
@@ -24,17 +25,17 @@ export const charactersReducer = (state = initialState, action: CharactersAction
 //typing
 
 type initialStateT = {
-    characters: Array<ResponsePeopleT>
+    characters: Array<ResponseCharactersType>
 }
 
 export type CharactersActionsT = {
     type: 'SET-CHARACTERS'
-    characters: Array<ResponsePeopleT>
+    characters: Array<ResponseCharactersType>
 }
 
 //actions
 
-const setCharactersAC = (characters: Array<ResponsePeopleT>) => {
+const setCharactersAC = (characters: Array<ResponseCharactersType>) => {
     return {
         type: 'SET-CHARACTERS',
         characters: characters
@@ -47,7 +48,7 @@ const setCharactersAC = (characters: Array<ResponsePeopleT>) => {
 
 export const getCharactersTC = () => {
     return async (dispatch: Dispatch) => {
-        let characters = await api.getAllPerson()
+        let characters = await api.getAllCharacters()
         dispatch(setCharactersAC(characters.data.results))
     }
 }

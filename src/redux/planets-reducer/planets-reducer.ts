@@ -1,5 +1,6 @@
 import {Dispatch} from 'redux';
-import api, {PlanetsResponseT} from '../../api/api';
+import api from '../../api/api';
+import {PlanetsResponseType} from '../../api/api-typing';
 import {getIdFromUrl} from '../../helpers/getID';
 
 
@@ -7,7 +8,7 @@ const initialState: initialStateT = {
     planets: []
 }
 
-export const planetsReducer = (state = initialState, action: CharactersActionsT) => {
+export const planetsReducer = (state = initialState, action: PlanetActionsType) => {
     switch (action.type) {
         case 'SET-PLANETS': {
             return {
@@ -24,17 +25,17 @@ export const planetsReducer = (state = initialState, action: CharactersActionsT)
 //typing
 
 type initialStateT = {
-    planets: Array<PlanetsResponseT>
+    planets: Array<PlanetsResponseType>
 }
 
-export type CharactersActionsT = {
+export type PlanetActionsType = {
     type: 'SET-PLANETS'
-    planets: Array<PlanetsResponseT>
+    planets: Array<PlanetsResponseType>
 }
 
 //actions
 
-const setPlanetsAC = (planets: Array<PlanetsResponseT>) => {
+const setPlanetsAC = (planets: Array<PlanetsResponseType>) => {
     return {
         type: 'SET-PLANETS',
         planets: planets

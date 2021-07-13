@@ -1,18 +1,19 @@
 import {Dispatch} from 'redux';
-import api, {ResponsePeopleT} from '../../api/api';
 import {getIdFromUrl} from '../../helpers/getID';
+import {FilmsResponseType} from '../../api/api-typing';
+import api from '../../api/api';
 
 
 const initialState: initialStateT = {
-    characters: []
+    films: []
 }
 
-export const filmsReducer = (state = initialState, action: CharactersActionsT) => {
+export const filmsReducer = (state = initialState, action: FilmsActionsT) => {
     switch (action.type) {
-        case 'SET-CHARACTERS': {
+        case 'SET-FILMS': {
             return {
                 ...state,
-                characters: action.characters.map((r) => ({...r, id: getIdFromUrl(r.url)}))
+                characters: action.films.map((r) => ({...r, id: getIdFromUrl(r.url)}))
             }
         }
         default:
@@ -24,20 +25,20 @@ export const filmsReducer = (state = initialState, action: CharactersActionsT) =
 //typing
 
 type initialStateT = {
-    characters: Array<ResponsePeopleT>
+    films: Array<FilmsResponseType>
 }
 
-export type CharactersActionsT = {
-    type: 'SET-CHARACTERS'
-    characters: Array<ResponsePeopleT>
+export type FilmsActionsT = {
+    type: 'SET-FILMS'
+    films: Array<FilmsResponseType>
 }
 
 //actions
 
-const setCharactersAC = (characters: Array<ResponsePeopleT>) => {
+const setFilmsAC = (films: Array<FilmsResponseType>) => {
     return {
-        type: 'SET-CHARACTERS',
-        characters: characters
+        type: 'SET-FILMS',
+        films: films
     } as const
 }
 
@@ -45,9 +46,9 @@ const setCharactersAC = (characters: Array<ResponsePeopleT>) => {
 //thunks
 
 
-export const getCharactersTC = () => {
+export const getFilmsTC = () => {
     return async (dispatch: Dispatch) => {
-        let characters = await api.getAllPerson()
-        dispatch(setCharactersAC(characters.data.results))
+        let films = await api.getAllFilms()
+        dispatch(setFilmsAC(films.data.results))
     }
 }
