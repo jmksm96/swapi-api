@@ -1,4 +1,7 @@
 export type CharactersType = {
+    count: number
+    next:string
+    previous: string | null
     results: Array<ResponseCharactersType>
 }
 

@@ -46,7 +46,7 @@ const App = () => {
                     <Route path="/planets" render={() => <Planets/>}/>
                     <Route path="/films" render={() => <Films/>}/>
                     <Route path="/starships" render={() => <Starships/>}/>
-                    <Route path="/species" render={() => <Species/>}/>
+                    <Route path="/species" render={() => <Species />}/>
                     <Route path="/vehicles" render={() => <Vehicles/>}/>
 
                 </Switch>

@@ -10,11 +10,17 @@ const PartsOfFilms: React.FC<PropsType> = (props) => {
     const {title, id} = props
     return (
         <div className={style.mainBlock}>
+            <Route exact path="/films/" render={() =>
+                <div className={style.items}>
+                    <Link to={'/films/' + id} className={style.link}>
+                        {title}
+                        <img className={style.img}
+                             src={`https://starwars-visualguide.com/assets/img/films/${id}.jpg`} alt=""/>
+                    </Link>
+                </div>}
+            />
+
             <div className={style.container}>
-                <Link to={'/films/' + id} className={style.link}>
-                    {title}
-                    <img src={`https://starwars-visualguide.com/assets/img/films/${id}.jpg`} alt=""/>
-                </Link>
 
                 <Route path={'/films/' + id} render={() => <SelectedFilm id={props.id}
                                                                          characters={props.characters}

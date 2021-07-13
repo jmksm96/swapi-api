@@ -18,16 +18,17 @@ const PlanetDetail = (props: PropsType) => {
     const {name, id} = props
     return (
         <div className={style.planets}>
-            <Link to={'/planet/' + id}>
-                {name}
-                <img src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt=""/>
-            </Link>
+            <Route exact path="/planets/" render={() =>
+                <div className={style.items}>
+                    <Link to={'/planets/' + id} className={style.link}>
+                        {name}
+                        <img className={style.img}
+                             src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt=""/>
+                    </Link>
+                </div>}
+            />
 
-            <Link to={'/planet/' + id}>
-
-            </Link>
-
-            <Route path={'/planet/' + id} render={() => <SelectedPlanetDetails id={props.id}
+            <Route path={'/planets/' + id} render={() => <SelectedPlanetDetails id={props.id}
                                                                                name={props.name}
                                                                                diameter={props.diameter}
                                                                                population={props.population}

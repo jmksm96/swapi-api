@@ -6,14 +6,17 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getCharactersTC} from '../../redux/characters-reducer/characters-reducer';
 import {charactersSelector} from '../../redux/characters-reducer/characters-selector';
 
-
 const Characters = () => {
+
 
     const dispatch = useDispatch()
     const characters = useSelector(charactersSelector)
+
     useEffect(() => {
         dispatch(getCharactersTC())
     }, [dispatch])
+
+
 
 
     return (
@@ -34,6 +37,7 @@ const Characters = () => {
 
 
             </div>
+
         </div>
 
     );
