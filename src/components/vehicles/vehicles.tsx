@@ -1,6 +1,6 @@
 import React from 'react';
 
-const StarshipDetails = () => {
+const Vehicles = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const StarshipDetails = () => {
     );
 };
 
-export default StarshipDetails;
+export default Vehicles;

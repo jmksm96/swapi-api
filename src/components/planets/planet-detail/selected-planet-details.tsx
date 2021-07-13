@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../../person-details/person-details.module.scss';
+import style from '../../charachters/person-details/person-details.module.scss';
 
 
 type PropsType = {

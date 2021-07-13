@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import style from './App.module.scss';
-import Planets from './components/planets/Planets';
-import Characters from './components/charachters/Characters';
+import Planets from './components/planets/planets';
+import Characters from './components/charachters/characters';
 
 
 const App = () => {
@@ -41,6 +41,9 @@ const App = () => {
                     <Route path={['/characters', '/character']} render={() => <Characters/>}/>
                     <Route path='/planets' render={() => <Planets/>}/>
                     {/*<Route path='/starships' render={() => <Starships/>}/>*/}
+                    {/*<Route path='/films' render={() => <Films/>}/>*/}
+                    {/*<Route path='/species' render={() => <Species/>}/>*/}
+                    {/*<Route path='/vehicles' render={() => <Vehicles/>}/>*/}
 
                 </Switch>
             </div>

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const PlanetDetails = () => {
+const Starships = () => {
     return (
         <div>
-            
+
         </div>
     );
 };
 
-export default PlanetDetails;
+export default Starships;

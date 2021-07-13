@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import Character from './character/character';
-import style from './Characters.module.scss'
+import style from './characters.module.scss'
 import {Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {getCharactersTC} from '../../redux/characters-reducer/characters-reducer';

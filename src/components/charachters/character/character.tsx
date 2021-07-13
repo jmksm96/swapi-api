@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
 import style from './character.module.scss'
-import PersonDetails from '../../person-details/person-details';
+import PersonDetails from '../person-details/person-details';
 
 
 export type CharacterPropsType = {

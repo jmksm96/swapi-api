@@ -2,9 +2,9 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getPlanetsTC} from '../../redux/planets-reducer/planets-reducer';
 import {planetsSelector} from '../../redux/planets-reducer/planets-selector';
-import style from '../charachters/Characters.module.scss';
+import style from '../charachters/characters.module.scss';
 import {Link} from 'react-router-dom';
-import PlanetDetail from './PlanetDetail/PlanetDetail';
+import PlanetDetail from './planet-detail/planet-detail';
 
 
 
