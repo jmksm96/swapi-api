@@ -17,7 +17,7 @@ export type CharacterPropsType = {
 const Character: React.FC<CharacterPropsType> = (props) => {
     const {name, gender, birthYear, height, hairColor, id} = props
     return (
-        <div className={style.character}>
+        <div className={style.container}>
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/characters/" render={() => <div className={style.link}>

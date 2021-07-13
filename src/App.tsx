@@ -3,6 +3,10 @@ import {Link, Route, Switch} from 'react-router-dom';
 import style from './App.module.scss';
 import Planets from './components/planets/planets';
 import Characters from './components/charachters/characters';
+import Films from './components/films/films';
+import Starships from './components/starships/starships';
+import Species from './components/species/species';
+import Vehicles from './components/vehicles/vehicles';
 
 
 const App = () => {
@@ -39,11 +43,11 @@ const App = () => {
 
                     </div>}/>
                     <Route path={['/characters', '/character']} render={() => <Characters/>}/>
-                    <Route path='/planets' render={() => <Planets/>}/>
-                    {/*<Route path='/starships' render={() => <Starships/>}/>*/}
-                    {/*<Route path='/films' render={() => <Films/>}/>*/}
-                    {/*<Route path='/species' render={() => <Species/>}/>*/}
-                    {/*<Route path='/vehicles' render={() => <Vehicles/>}/>*/}
+                    <Route path="/planets" render={() => <Planets/>}/>
+                    <Route path="/films" render={() => <Films/>}/>
+                    <Route path="/starships" render={() => <Starships/>}/>
+                    <Route path="/species" render={() => <Species/>}/>
+                    <Route path="/vehicles" render={() => <Vehicles/>}/>
 
                 </Switch>
             </div>

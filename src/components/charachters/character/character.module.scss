@@ -1,15 +1,8 @@
 @import 'src/common/styles/mixin';
 
-.character {
+.container {
   @include container();
   @include flex(row, space-between, center, nowrap);
-  //@include flex(column, space-between, center, nowrap);
-  //  //display: flex;
-  //  //justify-content: center;
-  //  //align-content: flex-end;
-  //  border: 1px solid white;
-  //  height: 250px;
-  //  width: 250px;
   .link {
 
     a {

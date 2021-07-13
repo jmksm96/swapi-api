@@ -1,0 +1,35 @@
+@import 'src/common/styles/mixin';
+
+.container {
+  width: 1000px;
+  background-color: #444444;
+  border-radius: 30px;
+  margin-top: 20px;
+  .img {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    img {
+      margin-top: 100px;
+      width: 250px;
+      height: 350px;
+      border-radius: 10px;
+    }
+  }
+  .details {
+    h4 {
+      position: relative;
+      left: 30px;
+    }
+    width: 600px;
+    margin-left: 300px;
+    bottom: 310px;
+    position: relative;
+    li {
+      list-style-type: none;
+    }
+  }
+  @media screen and (max-width: 1129px) {
+    justify-content: center;
+  }
+}

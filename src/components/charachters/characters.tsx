@@ -13,7 +13,7 @@ const Characters = () => {
     const characters = useSelector(charactersSelector)
     useEffect(() => {
         dispatch(getCharactersTC())
-    }, [])
+    }, [dispatch])
 
 
     return (

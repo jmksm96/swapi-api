@@ -13,7 +13,7 @@ export const filmsReducer = (state = initialState, action: FilmsActionsT) => {
         case 'SET-FILMS': {
             return {
                 ...state,
-                characters: action.films.map((r) => ({...r, id: getIdFromUrl(r.url)}))
+                films: action.films.map((r) => ({...r, id: getIdFromUrl(r.url)}))
             }
         }
         default:
