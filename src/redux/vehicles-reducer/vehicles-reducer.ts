@@ -45,7 +45,7 @@ const setVehiclesAC = (vehicles:  Array<VehiclesResponseType>) => {
 
 //thunks
 
-export const getPlanetsTC = () => {
+export const getVehiclesTC = () => {
     return async (dispatch: Dispatch) => {
         let vehicles = await api.getAllVehicles()
         dispatch(setVehiclesAC(vehicles.data.results))

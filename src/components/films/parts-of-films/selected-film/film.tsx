@@ -1,10 +1,10 @@
 import React from 'react';
 import {FilmsResponseType} from '../../../../api/api-typing';
-import style from './selected-films.module.scss'
+import style from './film.module.scss'
 
 type PropsType = FilmsResponseType
 
-const SelectedFilm:React.FC<PropsType> = (props) => {
+const Film:React.FC<PropsType> = (props) => {
     const { title, episode_id, opening_crawl, director, producer , release_date , id, characters , planets, starships, vehicles , species } = props
     return (
         <div className={style.container}>
@@ -25,4 +25,4 @@ const SelectedFilm:React.FC<PropsType> = (props) => {
     );
 };
 
-export default SelectedFilm;
+export default Film;

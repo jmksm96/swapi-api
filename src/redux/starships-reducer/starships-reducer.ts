@@ -45,7 +45,7 @@ const setSpeciesAC = (starships:  Array<StarshipsResponseType>) => {
 
 //thunks
 
-export const getPlanetsTC = () => {
+export const getStarshipsTC = () => {
     return async (dispatch: Dispatch) => {
         let starships = await api.getAllStarships()
         dispatch(setSpeciesAC(starships.data.results))

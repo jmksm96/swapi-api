@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../../charachters/person-details/person-details.module.scss';
+import style from '../../../charachters/character-details/person-details.module.scss';
 
 
 type PropsType = {
@@ -12,7 +12,7 @@ type PropsType = {
     id: number
 }
 
-const SelectedPlanetDetails = (props:PropsType) => {
+const PlanetDetail = (props:PropsType) => {
     const {name, diameter, population, climate, gravity, rotationPeriod, id,} = props
     return (
         <div>
@@ -36,4 +36,4 @@ const SelectedPlanetDetails = (props:PropsType) => {
     );
 };
 
-export default SelectedPlanetDetails;
+export default PlanetDetail;

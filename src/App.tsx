@@ -42,7 +42,7 @@ const App = () => {
                         </Link>
 
                     </div>}/>
-                    <Route path={['/characters', '/character']} render={() => <Characters/>}/>
+                    <Route path={['/characters']} render={() => <Characters/>}/>
                     <Route path="/planets" render={() => <Planets/>}/>
                     <Route path="/films" render={() => <Films/>}/>
                     <Route path="/starships" render={() => <Starships/>}/>

@@ -1,0 +1,27 @@
+@import 'src/common/styles/mixin';
+@import url(https://allfont.ru/allfont.css?fonts=star-jedi);
+
+
+
+.container {
+  margin-top: 30px;
+  @include flex(row, center, center, wrap);
+}
+
+.link {
+  @include flex(column, center, center, wrap);
+  color: lightblue;
+  text-decoration: none;
+}
+
+.img {
+  @include flex(row, space-around, flex-start, wrap);
+  border-radius: 30px;
+  width: 250px;
+  height: 350px;
+}
+
+.item {
+  @include container();
+  @include flex(row, space-around, flex-start, nowrap);
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './person-details.module.scss'
-import {CharacterPropsType} from "../character/character";
+import {CharacterPropsType} from "../characters-list/characters-list";
 
 
 const PersonDetails: React.FC<CharacterPropsType> = (props) => {
